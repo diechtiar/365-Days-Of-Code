@@ -11,19 +11,14 @@ class PhoneBook {
 
   getNumber(name) {
     if (this.book[name] > 0) {
-      return (name + '=' + this.book[name]);
+      console.log(name + '=' + this.book[name]);
     } else {
-      return 'Not found';
+      console.log('Not found');
     }
   }
 
-  setNumber(nameAndNumber) {
-    let name, phoneNumber;
-    [name, phoneNumber] = nameAndNumber.split(' ');
-    
+  setNumber(name, phoneNumber) {
     this.book[name] = phoneNumber;
-//    console.log(`Number set: ${name}=${this.book[name]}`);
-    return `${name}=${this.book[name]}`;
     }
   }
 
@@ -32,13 +27,17 @@ let phonebook = new PhoneBook();
 
 function processData(input) {
   //If input contains whitespace call setNumber, else call getNumber
-  if (input.indexOf(' ') > 0) {
-    phonebook.setNumber(input);
+  let dataset = input.split(' ');
+  if (dataset[1] > 0) {
+    phonebook.setNumber(dataset[0], dataset[1]);
   } else {
-    console.log(phonebook.getNumber(input));
+    phonebook.getNumber(dataset[0]);
   }
 } 
 
-processData('Joe 4589969364234');
-processData('Joe');
-processData('John');
+processData('sam 99912222');
+processData('harry 12299933');
+processData('tom 11122222');
+processData('sam');
+processData('edward');
+processData('harry');

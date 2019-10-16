@@ -13,12 +13,12 @@ function main() {
       
       if (binary[i] == 1) {
           maxOnes = maxOnes + 1;
-          
       } else {
-          if (maxOnes > ones) {
-              ones = maxOnes;
-          }
           maxOnes = 0;
+      }
+
+      if (maxOnes > ones) {
+        ones = maxOnes;
       }
   }
   console.log(ones);

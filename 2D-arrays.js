@@ -7,5 +7,3 @@
  const foo = "eslint is sweet"
 
 
-
- 

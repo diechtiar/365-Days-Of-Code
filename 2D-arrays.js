@@ -43,7 +43,7 @@ function extractHourglass (arr, x, y) {
 
 function main () {
   const arr = Array(6)
-  let maxHourglassSum = 0
+  let maxHourglassSum = -Infinity
   let sum
 
   for (let i = 0; i < 6; i++) {

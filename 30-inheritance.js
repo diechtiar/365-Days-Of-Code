@@ -23,13 +23,29 @@ class Student extends Person {
   *   @param scores - An array of integers denoting the Person's test scores.
   */
   // Write your constructor here
-
+  constructor (firstName, lastName, id, scores) {
+    super()
+    this.firstName = firstName
+    this.lastName = lastName
+    this.id = id
+    this.scores = scores
+  }
   /*	
   *   Method Name: calculate
   *   @return A character denoting the grade.
   */
   // Write your method here
+  calculate() {
+  /*
+  * (90 <= a) && (a <= 100) => 'O'
+  * (80 <= a) && (a <= 90) => 'E'
+  * (70 <= a) && (a <= 80) => 'A'
+  * (55 <= a) && (a <= 70) => 'P'
+  * (40 <= a) && (a <= 55) => 'D'
+  * (a < 40) => 'T'
   
+    return grade
+  }
 }
 
 function main() {

@@ -3,25 +3,26 @@
  * After calling countdown(myArray, 10), myArray should contain [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
  * After calling countdown(myArray, 5), myArray should contain [5, 4, 3, 2, 1] 
  */
+someArray = [];
 
 function countdown(myArray, n) {
 
-  if (n <= 1) {
+  if (n < 1) {
     if (n > 0) { 
-      return [n];
+      myArray = [n];
     } else {
       return [];
     }
   } else {
-    let result = countdown(myArray, n - 1);
-    result.push(n);
-    return result;
+    countdown(myArray, n - 1);
+    myArray.unshift(n);
+    return myArray;
   }
-
-  return [];
 }
 
-console.log(countdown([], 20));
+countdown(someArray, 5);
+
+console.log(someArray);
 
 /* 
  * countdown([], 5)
@@ -30,8 +31,8 @@ console.log(countdown([], 20));
  *       countdown([], 2)
  *         countdown([], 1)
  *         return [1]
- *       return [1, 2]
- *     return [1, 2, 3]
- *   return [1, 2, 3, 4]
- * return [1, 2, 3, 4, 5] 
+ *       return [2, 1]
+ *     return [3, 2, 1]
+ *   return [4, 3, 2, 1]
+ * return [5, 4, 3, 2, 1] 
  */

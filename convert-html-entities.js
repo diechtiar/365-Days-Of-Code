@@ -13,8 +13,6 @@ function convertHTML(str) {
     '\'': '&apos;'
   };
 
-  let result = '';
-  
   for (let [char, entity] of Object.entries(htmlEntities)) {
     let regex = new RegExp(char, 'gi');
     str = str.replace(regex, entity);
@@ -26,5 +24,3 @@ function convertHTML(str) {
 console.log(convertHTML("Dolce & Gabbana"));
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
 console.log(convertHTML("<>"));
-
-

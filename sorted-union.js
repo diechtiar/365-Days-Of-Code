@@ -6,8 +6,20 @@
  * The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order. 
  */
 
-function uniteUnique(arr) {
+function uniteUnique (arr) {
+  let input = ([...arguments]);
 
+  input = input.flat();
+  
+  let set = new Set(input);
+
+  input = [];
+
+  set.forEach((element) => {
+    input.push(element);
+  });
+
+  return input;
 }
 
 console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));

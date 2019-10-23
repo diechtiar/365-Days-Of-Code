@@ -5,8 +5,9 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard'
-  ],
+    'semistandard'
+  ]
+  ,
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'

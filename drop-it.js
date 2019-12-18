@@ -4,8 +4,21 @@
  */
 
 function dropElements(arr, func) {
+
+  let result = [...arr];
+  let cuttingPoint = result.length;
+
+  arr.forEach((element, index) => {
+    if (func(element) && cuttingPoint === result.length) {
+      cuttingPoint = index;
+    } 
+  });
+
   // Drop them elements.
-  return arr;
+  result = result.slice(cuttingPoint);
+//  console.log(result);
+  return result;
 }
 
-dropElements([1, 2, 3], function(n) {return n < 3; });
+dropElements([1, 2, 3, 4], function(n) {return n >= 3; }); // -> [3, 4]
+dropElements([0, 1, 0, 1], function(n) {return n === 1;}); // -> [1, 0, 1]

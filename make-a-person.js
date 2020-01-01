@@ -1,83 +1,33 @@
 var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
+
+  let first = firstAndLast.split(' ')[0];
+  let last = firstAndLast.split(' ')[1];
+
   this.getFullName = function() {
-    return `${this.getFirstName()} ${this.getLastName()}`;
+    return `${first} ${last}`;
   };
   this.getFirstName = function () {
-    return `Bob`;
-  }
-  
+    return first;
+  };
   this.getLastName = function () {
-    return `Ross`;
-  }
+    return last;
+  };
+  this.setFullName = function (fl) {
+    this.first = fl.split(' ')[0];
+    this.last = fl.split(' ')[1];
+  };
+  this.setFirstName = function (f) {
+    first = f;
+  };
 
-  this.setFullName = function(fullName) {
-    this.getFullName = function() {
-      return fullName;
-    }
-    this.setFirstName(fullName.split(' ')[0]);
-    this.setLastName(fullName.split(' ')[1]);
-  }
-
-  this.setFirstName = function(firstName) {
-    this.getFirstName = function() {
-      return firstName;
-    }
-  }
-
-  this.setLastName = function(lastName) {
-    this.getLastName = function() {
-      return lastName;
-    }
-  }  
-
+  this.setLastName = function (l) {
+    last = l;
+  };
 };
 
 var bob = new Person('Bob Ross');
-
-if (Object.keys(bob).length !== 6) {
-  console.log('Object.keys(bob).length should return 6.');
-};
-
-if ( ! (bob instanceof Person)) {
-  console.log('bob instanceof Person should return true.');
-}
-
-if (bob.firstName !== undefined) {
-  console.log('bob.firstName should return undefined.');
-}
-
-if (bob.lastName !== undefined) {
-  console.log('bob.lastName should return undefined.');
-}
-
-if (bob.getFirstName() !== 'Bob') {
-  console.log('bob.getFirstName() should return "Bob".');
-}
-
-if (bob.getLastName() !== 'Ross') {
-  console.log('bob.getLastName() should return "Ross".');
-}
-
-if (bob.getFullName() !== 'Bob Ross') {
-  console.log('bob.getFullName() should return "Bob Ross".');
-}
+console.log(bob.getFullName());
 
 bob.setFirstName('Haskell');
-
-if (bob.getFullName() !== 'Haskell Ross') {
-  console.log('bob.getFullName() should return "Haskell Ross".');
-}
-
-bob.setLastName('Curry');
-
-if (bob.getFullName() !== 'Haskell Curry') {
-  console.log('bob.getFullName() should return "Haskell Curry".');
-}
-
-bob.setFullName('Haskell Curry');
-
-if (bob.getFullName() !== 'Haskell Curry') {
-  console.log('bob.getFullName() should return "Haskell Curry".');
-}
-
+console.log(bob.getFullName());

@@ -1,0 +1,4 @@
+*.code-workspace
+*.zip
+*.log
+node_modules
